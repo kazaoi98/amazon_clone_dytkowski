@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+    z-index: -1 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* .swiper-button-next {
+    position: absolute;
+    top: 20% !important;
+    opacity: .6;
+    padding: 30px;
+
+}
+
+.swiper-button-prev {
+    position: absolute;
+    top: 20% !important;
+    opacity: .6;
+    padding: 30px;
+ 
+} */
