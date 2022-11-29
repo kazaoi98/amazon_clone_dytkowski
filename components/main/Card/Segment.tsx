@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
-type Props = {id: number, title: string, img: string, price: string, rating: number}
+
 
 const items = [
   { id: 1, title: 'Gaming headset of hell', img: 'https://m.media-amazon.com/images/I/41JEZ2rg66L._AC_SX679_.jpg', price: '129.90', rating: 3.6},
@@ -18,11 +18,11 @@ const items = [
   { id: 12, title: 'Amazon Basics Swivel Compact', img: 'https://m.media-amazon.com/images/I/A1y6wgeCPTL._AC_SL1500_.jpg', price: '80.44', rating: 4.5 },
 ]
 
-export default function Segment({ }: Props) {
+export default function Segment() {
   return (
     <div className='flex flex-row flex-wrap max-w-[1480px] overflow-hidden z-[1] opacity-100 px-2 mr-8 justify-start'>
 
-      {items.map((data: Props, idx: number) => (
+      {items.map((data: any, idx: number) => (
           <>
             < Card product={data} />
           </>
