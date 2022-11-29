@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
+import { itemProps } from '../../../app/Cart/page';
+import { addToCart, cartItemsTypes, customQuantity, decreaseQuantity } from '../../../redux/cartSlice';
+import { useAppDispatch } from '../../../redux/hooks';
 
 
 
@@ -8,14 +11,13 @@ type Props = {
     qty: number
 }
 
-export default function QuantitySelector({qty}: Props) {
+export default function QuantitySelector({item}: itemProps) {
 
-    const [quantity, setQuantity] = useState(qty || 1)
     const [disabled, setDisable] = useState(false)
     const [disabledStyle, SetDisabledStyle] = useState('')
 
     useEffect(() => {
-        if (quantity === 1) {
+        if (item.cartQuantity === 1) {
             setDisable(true)
             SetDisabledStyle('bg-gray-100 text-gray-300')
         } else {
@@ -24,23 +26,29 @@ export default function QuantitySelector({qty}: Props) {
         }
 
 
-    }, [quantity])
+    }, [item.cartQuantity])
 
-    const Quantity = (set: string) => {
+    const dispatch = useAppDispatch()
 
-        if (set === 'add') return setQuantity(quantity + 1)
-        else if (set === 'sub' && quantity >= 2) {
-            return setQuantity(quantity - 1)
-        } else return
+    const increaseQty = (product: any) => {
+        dispatch(addToCart(product))
     };
+
+    const decreaseQty = (product: any) => {
+        dispatch(decreaseQuantity(product))
+    }
+
+    const customQty = (product: any, qty: number) => {
+        dispatch(customQuantity([product, qty]))
+    }
     return (
 
         <div className='flex flex-col font-normal text-black'>
             <span className='text-[0.9rem] '>Quantity</span>
             <div className='inline-flex bg-gray-100 rounded-full'>
-                <button onClick={() => Quantity('sub')} disabled={disabled} className={'bg-gray-200 h-8 w-8 rounded-full flex items-center justify-center pb-2 ' + disabledStyle}>-</button>
-                <input type={'number'} onChange={(e) => setQuantity(Number(e.target.value))} min={1} className='font-normal text-[1.1rem] flex items-center w-[1.8rem] justify-center text-center outline-none bg-gray-100' value={quantity} ></input>
-                <button onClick={() => Quantity('add')} className='bg-gray-200 h-8 w-8 rounded-full flex items-center justify-center pb-2 '>+</button>
+                <button onClick={() => decreaseQty(item)} disabled={disabled} className={'bg-gray-200 h-8 w-8 rounded-full flex items-center justify-center pb-2 ' + disabledStyle}>-</button>
+                <input type={'number'} onChange={(e) => customQty(item, Number(e.target.value))} min={1} max={999} className='font-normal text-[1.1rem] flex items-center w-[1.8rem] justify-center text-center outline-none bg-gray-100' value={item.cartQuantity} ></input>
+                <button onClick={() => increaseQty(item)} className='bg-gray-200 h-8 w-8 rounded-full flex items-center justify-center pb-2 '>+</button>
             </div>
         </div>
 

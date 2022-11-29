@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import CartIndicatorButton from './main/Misc/CartIndicatorButton'
+
+export default function Header() {
 
 
-type Props = {}
-
-export default function Header({ }: Props) {
   return (
     <div >
       <header className='flex-1 flex-col m-0' >
@@ -15,7 +15,7 @@ export default function Header({ }: Props) {
 
             <div className='flex'>
 
-              <div className='relative flex-shrink-0 hover:outline-[1px] hover:outline hover:outline-white md:ml-[11px] h-[50px]'>
+              <div className='transition-transform duration-200 ease-in-out hover:scale-105 relative flex-shrink-0 md:ml-[11px] h-[50px]'>
                 <Link href='/'>
                   <Image
                     className='h-[40px] mt-2 m-[1px] w-full pt-[1px] pr-[8px] pb-0 pl-[6px] '
@@ -85,22 +85,15 @@ export default function Header({ }: Props) {
                 </svg>
               </button>
 
-              <Link href={'/Cart'} className='md:mr-[11px] md:ml-[2px]  flex flex-wrap hover:outline hover:outline-[1px] hover:outline-white items-center ml-[2px] px-[4px] w-[70px] leading-[1] py-[10px] pt-[10px] flex-shrink-0'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-white">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
-
-                <span className='text-[1.2rem] lg:text-[1rem] text-white font-semibold '>Cart</span>
-
-              </Link>
+              <CartIndicatorButton />
 
 
 
             </div>
           </div>
 
-          <nav className='md:pl-[11px] max-h-[39px] pt-0 flex flex-nowrap h-[39px] items-center justify-between text-white'>
-            <div className='flex items-center no-underline text-[0.9rem] font-medium flex-shrink-0'>
+          <nav className='md:pl-[11px] max-h-[39px] pt-0 flex flex-nowrap h-[39px] items-center justify-around text-white'>
+            <div className='no-underline text-[1rem] font-medium mr-2 flex-shrink-0'>
               <button className='hover:outline hover:outline-[1px] py-[3px] px-[5px] hover:outline-white flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -108,6 +101,9 @@ export default function Header({ }: Props) {
                 <span className='pl-[2px] '>All</span>
               </button>
 
+            </div>
+
+            <div className='flex items-center no-underline text-[0.9rem] font-medium flex-shrink-0'>
               <button className='hover:outline hover:outline-[1px] py-[3px] px-[5px] hover:outline-white flex items-center'>
                 <span className='pl-[2px] '>Today's Deals</span>
               </button>
@@ -128,6 +124,7 @@ export default function Header({ }: Props) {
                 <span className='pl-[2px] '>Sell</span>
               </button>
             </div>
+
             <div className=' no-underline text-[1rem] font-medium mr-2 flex-shrink-0'>
               <button className='hover:outline hover:outline-[1px] py-[3px] px-[5px] hover:outline-white flex items-center'>
                 <span className='pl-[2px] '>Shop great deals now</span>

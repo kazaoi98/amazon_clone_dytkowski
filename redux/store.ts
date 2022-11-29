@@ -11,19 +11,31 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import cartReducer from './cartSlice';
+import cartReducer, { getTotal } from './cartSlice';
 
 const persistConfig = {
   key: 'root',
   storage,
 }
 
+const persistedReducer = persistReducer(persistConfig, cartReducer)
+
+
 export const store = configureStore({
   reducer: {
-    cart: cartReducer
-  }
+    cart: persistedReducer
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
 })
 
+store.dispatch(getTotal())
+
+export const persistor = persistStore(store)
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
