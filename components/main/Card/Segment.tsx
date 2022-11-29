@@ -10,7 +10,12 @@ const items = [
   { id: 4, title: 'ROG Strix G10DK Gaming Desktop PC', img: 'https://m.media-amazon.com/images/I/71ByNPM6QdL._AC_SX679_.jpg', price: '769.99', rating: 4.4 },
   { id: 5, title: 'Kingston 240GB A400 SATA 3 2.5" Internal SSD SA400S37/240G - HDD Replacement for Increase Performance', img: 'https://m.media-amazon.com/images/I/91RL+MhTWbL._AC_SX679_.jpg', price: '19.99', rating: 3.5 },
   { id: 6, title: 'AMD Ryzen 5 5600G', img: 'https://m.media-amazon.com/images/I/51f2hkWjTlL._AC_SX679_.jpg', price: '127.97', rating: 2.7 },
-
+  { id: 7, title: 'Razer Viper Ultimate Hyperspeed', img: 'https://m.media-amazon.com/images/I/61M7B24YNEL._AC_SL1500_.jpg', price: '74.99', rating: 4.5 },
+  { id: 8, title: 'Echo Studio', img: 'https://m.media-amazon.com/images/I/61+voFa3ZfL._AC_SL1000_.jpg', price: '199.98', rating: 3.7 },
+  { id: 9, title: 'Google Nest Thermostat', img: 'https://m.media-amazon.com/images/I/71vTp9YTjuL._AC_SL1500_.jpg', price: '89.98', rating : 4.8 },
+  { id: 10, title: 'Philips Sonicare 4100 Power Toothbrush', img: 'https://m.media-amazon.com/images/I/71ypq6P67pL._SL1500_.jpg', price: '169.99', rating: 3.4 },
+  { id: 11, title: 'MANSCAPED® Electric Groin Hair Trimmer', img: 'https://m.media-amazon.com/images/I/618V6gRrZOL._SL1500_.jpg', price: '89.99', rating: 4.4 },
+  { id: 12, title: 'Amazon Basics Swivel Compact', img: 'https://m.media-amazon.com/images/I/A1y6wgeCPTL._AC_SL1500_.jpg', price: '80.44', rating: 4.5 },
 ]
 
 export default function Segment({ }: Props) {

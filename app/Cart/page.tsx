@@ -7,6 +7,7 @@ import CartItem from '../../components/main/Card/CartItem'
 import { cartItemsTypes, getTotal } from '../../redux/cartSlice';
 import { useAppDispatch } from '../../redux/hooks';
 import Image from 'next/image'
+import Link from 'next/link';
 
 export type itemProperties = {
   id: number
@@ -22,7 +23,9 @@ export type itemProps = {
 
 export default function page() {
   const cart = useSelector((state: any) => state.cart);
+
   const dispatch = useAppDispatch()
+
   useEffect(() => {
     dispatch(getTotal())
   }, [cart])
@@ -41,10 +44,10 @@ export default function page() {
         <div className='flex flex-col pl-2 ml-4 mt-6'>
           <span className='font-normal text-[1.8rem]'>Your cart is empty.</span>
           <div className='transition-transform duration-300 ease-in-out group hover:bg-yellow-400 hover:scale-105 hover:cursor-pointer flex items-center mt-6 bg-yellow-300 w-[18rem] justify-center rounded-lg py-1'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="transition-transform duration-100 ease-in group-hover:translate-x-[-5px] w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="transition-transform duration-100 ease-in  group-hover:translate-x-[-5px]  w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
             </svg>
-            <span className='ml-2 text-[1.2rem]'>Go back to shopping.</span>
+            <Link className='ml-2 text-[1.2rem]' href={'/'}>Go back to shopping.</Link>
           </div>
         </div>
       </div>
@@ -62,16 +65,21 @@ export default function page() {
             BackButton()
           ) : (
             <>
-              <span className='font-medium text-[1.8rem] pl-2'>Shopping Cart</span>
+              <span className='font-medium text-[2rem] lg:text-[1.8rem] pl-2'>Shopping Cart</span>
               <div className='w-full [border-bottom-solid] border-b-[1px] border-b-[#DDD] mr-0 float-right overflow-visible text-right'>
-                <span className='text-right text-[0.9rem] font-medium text-gray-600'>Price</span>
+                <span className='text-right text-[1.6rem] lg:text-[0.9rem] font-medium text-gray-600'>Price</span>
               </div>
               {cart.cartItems?.map((items: any) => (
                 <CartItem item={items} />
               ))}
-              <div className='flex items-center float-right mt-2'>
-                <span className='text-[1.3rem] float-right'>Subtotal ({cart.cartTotalQuantity} {(cart.cartTotalQuantity > 1) ? (<span> items</span>) : (<span> item</span>)}):</span>
-                <span className='ml-2 text-[1.3rem] font-semibold mr-2'>${cart.cartTotalAmount}</span>
+              <div className='flex flex-col items-center float-right mt-2'>
+                <div className='flex flex-row text-[1.9rem] lg:text-[1.3rem]'>
+                  <span className=' float-right'>Subtotal ({cart.cartTotalQuantity} {(cart.cartTotalQuantity > 1) ? (<span> items</span>) : (<span> item</span>)}):</span>
+                  <span className='ml-2 font-semibold mr-2'>${cart.cartTotalAmount}</span>
+                </div>
+                <div className='flex lg:hidden mt-4  justify-center items-center'>
+                  <button className='hover:bg-yellow-500 hover:scale-105 bg-yellow-400 rounded-lg px-8 py-1 text-[1.9rem] lg:text-[0.9rem] font-semibold'>Proceed to checkout</button>
+                </div>
               </div>
             </>)
           }
@@ -83,7 +91,7 @@ export default function page() {
 
       </div >
 
-      <div className='ml-4 mr-2 w-64 flex-shrink-0 h-full sticky top-2'>
+      <div className='hidden lg:flex ml-4 mr-2 w-64 flex-shrink-0 h-full sticky top-2'>
         <div className='bg-white h-[10rem] rounded-lg justify-center'>
           <div className='flex pt-6 pl-6 flex-wrap'>
             <span className='text-[1.3rem]'>Subtotal ({cart.cartTotalQuantity} {(cart.cartTotalQuantity > 1) ? (<span> items</span>) : (<span> item</span>)}):</span>
