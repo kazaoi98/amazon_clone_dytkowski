@@ -11,7 +11,7 @@ export default function page({ }: Props) {
   return (
 
 
-    <div className='max-w-[94rem] mx-auto'>
+    <div className='max-w-[94rem] '>
 
       <Carousel />
       <Segment />

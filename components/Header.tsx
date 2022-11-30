@@ -68,7 +68,7 @@ export default function Header() {
               </div>
             </div>
 
-            <div className='flex h-[60px] items-center'>
+            <div className='flex h-[60px] items-center  '>
 
               <button className='hidden lg:flex md:ml-[2px] hover:outline hover:outline-[1px] hover:outline-white  items-center ml-[1px] pl-[9px] h-[50px] pt-[10px]'>
                 <p className='text-[0.9rem] text-white font-semibold'>EN</p>

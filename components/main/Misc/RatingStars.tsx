@@ -8,7 +8,7 @@ type Props = {
 export default function RatingStars({ rating }: Props) {
     const ratingCeil = Math.floor(rating)
     return (
-        <div className=" mb-1 flex flex-grow items-center justify-center">
+        <div className=" mb-1 flex flex-1 items-center justify-center">
             {[...Array(5)].map((star, index) => {
                 index += 1;
 
