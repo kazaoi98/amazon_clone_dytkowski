@@ -20,7 +20,7 @@ const items = [
 
 export default function Segment() {
   return (
-    <div className='flex flex-row flex-wrap overflow-hidden pr-8 justify-start'>
+    <div className='flex flex-row flex-wrap overflow-hidden pr-10 justify-start'>
 
       {items.map((data: any, idx: number) => (
           <>
