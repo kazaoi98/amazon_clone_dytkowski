@@ -21,6 +21,30 @@ export type itemProps = {
   item: itemProperties
 }
 
+const BackButton = () => {
+  return (
+    <div className='flex flex-row'>
+      <Image
+        className='w-[32%] h-full mt-2 m-[1px] pt-[1px] pr-[8px] pb-0 pl-[6px] '
+        alt="logo"
+        src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
+        width={261}
+        height={150}
+      />
+
+      <div className='flex flex-col pl-2 ml-4 mt-6'>
+        <span className='font-normal text-[1.8rem]'>Your cart is empty.</span>
+        <div className='transition-transform duration-300 ease-in-out group hover:bg-yellow-400 hover:scale-105 hover:cursor-pointer flex items-center mt-6 bg-yellow-300 w-[18rem] justify-center rounded-lg py-1'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="transition-transform duration-100 ease-in  group-hover:translate-x-[-5px]  w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+          </svg>
+          <Link className='ml-2 text-[1.2rem]' href={'/'}>Go back to shopping.</Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function page() {
   const cart = useSelector((state: any) => state.cart);
 
@@ -30,29 +54,6 @@ export default function page() {
     dispatch(getTotal())
   }, [cart])
 
-  const BackButton = () => {
-    return (
-      <div className='flex flex-row'>
-        <Image
-          className='w-[32%] h-full mt-2 m-[1px] pt-[1px] pr-[8px] pb-0 pl-[6px] '
-          alt="logo"
-          src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
-          width={261}
-          height={150}
-        />
-
-        <div className='flex flex-col pl-2 ml-4 mt-6'>
-          <span className='font-normal text-[1.8rem]'>Your cart is empty.</span>
-          <div className='transition-transform duration-300 ease-in-out group hover:bg-yellow-400 hover:scale-105 hover:cursor-pointer flex items-center mt-6 bg-yellow-300 w-[18rem] justify-center rounded-lg py-1'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="transition-transform duration-100 ease-in  group-hover:translate-x-[-5px]  w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
-            </svg>
-            <Link className='ml-2 text-[1.2rem]' href={'/'}>Go back to shopping.</Link>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   return (
 

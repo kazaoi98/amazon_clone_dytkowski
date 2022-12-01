@@ -18,7 +18,7 @@ export default function Footer({ }: Props) {
                             alt="logo"
                             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                             width={76}
-                            height={28}
+                            height={30}
                         />
                     </Link>
                 </div>

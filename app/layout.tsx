@@ -17,6 +17,7 @@ export default function RootLayout({
         <html lang="pl">
             <head>
                 <title>Next.js Amazon clone</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </head>
             <body className='box-border h-full w-full bg-[#EAEDED] overflow-x-hidden'>
                 <div>

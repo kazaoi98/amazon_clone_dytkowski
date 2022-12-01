@@ -22,7 +22,7 @@ export default function Header() {
                     alt="logo"
                     src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                     width={97}
-                    height={30}
+                    height={40}
                   />
                 </Link>
               </div>
@@ -48,7 +48,7 @@ export default function Header() {
 
             <div className='flex  ml-0 lg:ml-5 h-[40px] flex-grow mr-3'>
 
-              <button className='hidden lg:flex hover:bg-[hsla(0,0%,100%,.8)] hover:border-none hover:text-black items-center font-medium text-[#5a5a5a] bg-[#f3f3f3] border border-solid border-r-[1px] border-r-[#777] rounded-l-[0.3rem] w-[52px] justify-center'>
+              <button aria-label='search category' className='hidden lg:flex hover:bg-[hsla(0,0%,100%,.8)] hover:border-none hover:text-black items-center font-medium text-[#5a5a5a] bg-[#f3f3f3] border border-solid border-r-[1px] border-r-[#777] rounded-l-[0.3rem] w-[52px] justify-center'>
                 <p className='text-[12px]'>All</p>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="pl-1 w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -56,11 +56,11 @@ export default function Header() {
               </button>
 
               <div className='flex  flex-1'>
-                <input type={'text'} autoComplete={'off'} className='h-[40px] outline-none flex flex-grow indent-[8px] leading-[15px] text-black pt-[7px] pr-[10px] pb-[10px] pl-0' ></input>
+                <input aria-label='search input' type={'text'} autoComplete={'off'} className='h-[40px] outline-none flex flex-grow indent-[8px] leading-[15px] text-black pt-[7px] pr-[10px] pb-[10px] pl-0' ></input>
               </div>
 
               <div className='flex bg-[#febd69] justify-center items-center w-[45px] hover:bg-[#f3a847] rounded-r-[0.3rem] mr-2'>
-                <button className='flex text-[#5a5a5a] rounded-r-[0.3rem] h-full w-full justify-center items-center'>
+                <button aria-label='search button' className='flex text-[#5a5a5a] rounded-r-[0.3rem] h-full w-full justify-center items-center'>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 text-gray-800">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                   </svg>
