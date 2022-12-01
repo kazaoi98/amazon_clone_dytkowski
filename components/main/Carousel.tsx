@@ -24,7 +24,7 @@ export default function SliderComponent() {
                 >
                     <SwiperSlide>
                         <Image
-                            className='object-fill w-full h-[600px] z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
+                            className='object-fill z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
                             alt="carousel-img"
                             src={'https://m.media-amazon.com/images/I/71aQ3u78A3L._SX3000_.jpg'}
                             width={1500}
@@ -34,7 +34,7 @@ export default function SliderComponent() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            className='object-fill w-full h-[600px] z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
+                            className='object-fill z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
                             alt="carousel-img"
                             src={'https://m.media-amazon.com/images/I/71dbxIcDioL._SX3000_.jpg'}
                             width={1500}
@@ -43,7 +43,7 @@ export default function SliderComponent() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
-                            className='object-fill w-full h-[600px] z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
+                            className='object-fil z-[-1]  [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_60%,rgba(0,0,0,0))]'
                             alt="carousel-img"
                             src={'https://m.media-amazon.com/images/I/71tIrZqybrL._SX3000_.jpg'}
                             width={1500}
