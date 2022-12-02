@@ -24,7 +24,7 @@ export default function CartIndicatorButton() {
             <div className='flex text-center items-center bg-[#FDE8E8] rounded-full z-10 p-[0.08em] justify-center relative  translate-x-[-17px] translate-y-[-12px] border-solid border-[2px] border-[#131921]'>
                 <span className='flex text-[#5A2702] font-bold text-[0.9rem] w-[1.3rem] h-[1.3rem] tracking-tighter items-center justify-center mt-[-2px]'>{quantity}</span>
             </div>
-            <span className='text-[1.2rem] lg:text-[1rem] text-white font-semibold translate-x-[-1.5rem] translate-y-[0.35rem] pr-4 mr-2'>Cart</span>
+            <span className='hidden lg:flex text-[1.2rem] lg:text-[1rem] text-white font-semibold translate-x-[-1.5rem] translate-y-[0.35rem] pr-4 mr-2'>Cart</span>
 
         </Link>
     )

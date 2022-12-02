@@ -13,8 +13,8 @@ export default function page({ }: Props) {
 
     <div className='max-w-[94rem] mx-auto'>
 
-      <Carousel />
-      <div className='flex justify-center mr-4'>
+      <Carousel /> 
+      <div className='flex justify-center'>
         <Segment />
       </div>
     </div>

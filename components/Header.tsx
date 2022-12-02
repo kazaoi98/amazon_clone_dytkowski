@@ -7,11 +7,10 @@ export default function Header() {
 
 
   return (
-    <div >
       <header className='flex-1 flex-col m-0' >
         <div className='m-0 bg-[rgb(35,47,62)] '>
 
-          <div className='flex flex-row  h-[60px] items-center bg-[#131921]'>
+          <div className='flex flex-row h-[60px] items-center bg-[#131921]'>
 
             <div className='flex'>
 
@@ -139,6 +138,5 @@ export default function Header() {
 
 
       </header>
-    </div>
   )
 }
