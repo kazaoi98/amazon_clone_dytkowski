@@ -20,7 +20,7 @@ export default function Header() {
               </svg>
             </div>
 
-            <div className='transition-transform duration-200 ease-in-out hover:scale-105 relative flex-shrink-0 md:ml-[11px] h-[50px]'>
+            <div className='transition-transform duration-200 ease-in-out hover:scale-100 lg:hover:scale-105 relative flex-shrink-0 md:ml-[11px] h-[50px]'>
               <Link href='/'>
                 <Image
                   className='h-[35px] lg:h-[40px] mt-3 lg:mt-2 m-[1px] w-full lg:pt-[1px] pr-[8px] pb-0 pl-[6px] '
