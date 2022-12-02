@@ -28,7 +28,7 @@ export default function ({ product }: ProductTypes) {
                         <Link href='/'>
                             <Image
                                 alt="product image"
-                                className=' w-full h-[23rem] lg:w-auto lg:h-auto max-w-full object-fill rounded-[4px]'
+                                className=' lg:w-auto lg:h-auto max-w-full object-fill rounded-[4px] block'
                                 src={product.img}
                                 width={310}
                                 height={368}

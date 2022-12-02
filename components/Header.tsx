@@ -28,7 +28,7 @@ export default function Header() {
               </div>
 
               <div className='flex flex-shrink-0'>
-                <button className='hover:outline hover:outline-[1px] flex items-center text-white ml-[3px] mx-[0.7rem] '>
+                <button aria-label='deliver to button' className='hover:outline hover:outline-[1px] flex items-center text-white ml-[3px] mx-[0.7rem] '>
 
                   <div className='flex-shrink-0 mt-2 '>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-9 h-9 mx-2 lg:mx-0 mb-2 justify-center lg:w-5 lg:h-5 text-white">

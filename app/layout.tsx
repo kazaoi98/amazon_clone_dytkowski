@@ -18,6 +18,7 @@ export default function RootLayout({
             <head>
                 <title>Next.js Amazon clone</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="description" content="Amazon clone made by Łukasz Dytkowski" />
             </head>
             <body className='box-border h-full w-full bg-[#EAEDED] overflow-x-hidden'>
                 <div>
