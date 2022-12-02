@@ -29,7 +29,7 @@ export default function SliderComponent() {
                             src={'https://m.media-amazon.com/images/I/71aQ3u78A3L._SX3000_.jpg'}
                             width={1500}
                             height={600}
-                            priority 
+                            priority={true}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
