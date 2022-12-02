@@ -25,10 +25,10 @@ export default function ({ product }: ProductTypes) {
                 </div>
                 <div className='flex justify-center'>
                     <div className='px-[20px] max-h-[300px]'>
-                        <Link href='/'>
+                        <Link href='/' className='w-[300px] h-[300px]'>
                             <Image
                                 alt="product image"
-                                className=' lg:w-auto lg:h-auto max-w-full object-fill rounded-[4px] block'
+                                className='w-full h-full max-w-full object-fill rounded-[4px] block'
                                 src={product.img}
                                 width={310}
                                 height={368}

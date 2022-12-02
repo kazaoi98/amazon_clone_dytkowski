@@ -46,7 +46,7 @@ export default function Header() {
 
             </div>
 
-            <div className='flex  ml-0 lg:ml-5 h-[40px] flex-grow mr-3'>
+            <div className='hidden lg:flex  ml-0 lg:ml-5 h-[40px] flex-grow mr-3'>
 
               <button aria-label='search category' className='hidden lg:flex hover:bg-[hsla(0,0%,100%,.8)] hover:border-none hover:text-black items-center font-medium text-[#5a5a5a] bg-[#f3f3f3] border border-solid border-r-[1px] border-r-[#777] rounded-l-[0.3rem] w-[52px] justify-center'>
                 <p className='text-[12px]'>All</p>
@@ -103,7 +103,7 @@ export default function Header() {
 
             </div>
 
-            <div className='group flex items-center no-underline text-[0.9rem] font-medium flex-shrink-0 text-gray-300'>
+            <div className='group hidden lg:flex items-center no-underline text-[0.9rem] font-medium flex-shrink-0 text-gray-300'>
               <button className='hover:bg-gray-700 hover:rounded-md group-hover:border-r-[rgb(35,47,62)] hover:text-gray-200 py-[3px] px-4 flex items-center [border-right-solid] border-r-[1px] border-r-gray-500'>
                 <span className='pl-[2px] '>Today's Deals</span>
               </button>
