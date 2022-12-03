@@ -30,6 +30,7 @@ const BackButton = () => {
         src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg"
         width={261}
         height={150}
+        priority={true}
       />
 
       <div className='flex flex-col pl-2 ml-4 mt-6'>
@@ -56,9 +57,9 @@ export default function page() {
 
   return (
 
-    <div className='mr-0 lg:mr-2 pl-0 lg:pl-4 pt-4 h-full inline-flex w-full'>
+    <div className='mr-0 lg:mr-2 pl-0 lg:pl-4 pt-0 lg:pt-4 h-full inline-flex w-full'>
 
-      <div className='bg-white flex-col pr-1 lg:pr-6 pb-0 lg:pb-6 rounded-lg pl-4 w-full lg:w-[100rem] h-full min-w-[3rem] lg:min-w-[40rem] float-none '>
+      <div className='bg-white flex-col pr-1 lg:pr-6 pb-0 lg:pb-6 rounded-none lg:rounded-lg pl-4 w-full lg:w-[100rem] h-full min-w-[3rem] lg:min-w-[40rem] float-none '>
         <div className='pt-4'>
 
           {cart.cartItems.length === 0 ? (
@@ -66,7 +67,7 @@ export default function page() {
           ) : (
             <>
               <span className='font-medium text-[1.5rem] lg:text-[1.8rem] pl-2'>Shopping Cart</span>
-              <div className='w-full [border-bottom-solid] border-b-[1px] border-b-[#DDD] mr-0 float-right overflow-visible text-right'>
+              <div className='w-full [border-bottom-solid] border-b-[1px] border-b-[#DDD] mr-1 lg:mr-0 float-right overflow-visible text-right'>
                 <span className='text-right text-[1rem] lg:text-[0.9rem] font-medium text-gray-600'>Price</span>
               </div>
               {cart.cartItems?.map((items: any) => (
