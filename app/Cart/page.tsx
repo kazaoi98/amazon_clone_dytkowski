@@ -59,7 +59,7 @@ export default function page() {
 
     <div className='mr-0 lg:mr-2 pl-0 lg:pl-4 pt-0 lg:pt-4 h-full inline-flex w-full'>
 
-      <div className='bg-white flex-col pr-1 lg:pr-6 pb-0 lg:pb-6 rounded-none lg:rounded-lg pl-4 w-full lg:w-[100rem] h-full min-w-[3rem] lg:min-w-[40rem] float-none '>
+      <div className='bg-white flex-col pr-0 lg:pr-6 pb-0 lg:pb-6 rounded-none lg:rounded-lg pl-0 lg:pl-4 w-full lg:w-[100rem] h-full min-w-[3rem] lg:min-w-[40rem] float-none '>
         <div className='pt-4'>
 
           {cart.cartItems.length === 0 ? (
@@ -73,13 +73,13 @@ export default function page() {
               {cart.cartItems?.map((items: any) => (
                 <CartItem item={items} />
               ))}
-              <div className='flex justify-center lg:justify-end sticky lg:static bottom-0 bg-white'>
-                <div className='flex flex-col items-center float-right mt-2'>
-                  <div className='flex flex-row text-[1.3rem]'>
+              <div className='flex justify-center lg:justify-end sticky lg:static bottom-0 bg-white w-full'>
+                <div className='flex flex-col items-center float-right mt-2 w-full'>
+                  <div className='flex flex-row text-[1.3rem] justify-center w-full'>
                     <span className=' float-right'>Subtotal ({cart.cartTotalQuantity} {(cart.cartTotalQuantity > 1) ? (<span> items</span>) : (<span> item</span>)}):</span>
                     <span className='ml-2 font-bold mr-2'>${cart.cartTotalAmount}</span>
                   </div>
-                  <div className='flex lg:hidden mt-2 mb-2 lg:mt-4  justify-center items-center'>
+                  <div className='flex lg:hidden mt-2 mb-2 lg:mt-4  justify-center items-center w-full'>
                     <button className=' hover:bg-yellow-500 hover:scale-105 bg-yellow-400 rounded-lg px-8 py-1 text-[1rem] lg:text-[0.9rem] font-semibold'>Proceed to checkout</button>
                   </div>
                 </div>
