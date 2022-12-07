@@ -5,7 +5,7 @@ import './globals.css'
 import Providers from './providers';
 
 
-
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function RootLayout({
     children,
@@ -25,6 +25,7 @@ export default function RootLayout({
                     <Providers>
                         <Header />
                         {children}
+                        
                     </Providers>
                     <Footer />
                 </div>

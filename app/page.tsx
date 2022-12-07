@@ -3,7 +3,7 @@
 import React from 'react'
 import Segment from '../components/main/Card/Segment';
 import Carousel from '../components/main/Carousel'
-
+import { ToastContainer } from 'react-toastify';
 
 type Props = {}
 
@@ -17,8 +17,9 @@ export default function page({ }: Props) {
       <div className='flex justify-center'>
         <Segment />
       </div>
+      <ToastContainer limit={2}/>
     </div>
-
+    
 
 
   )

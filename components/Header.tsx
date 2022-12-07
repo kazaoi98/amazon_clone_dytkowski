@@ -90,7 +90,7 @@ export default function Header() {
               </svg>
             </button>
 
-            <CartIndicatorButton />
+            <CartIndicatorButton /> 
 
 
 
