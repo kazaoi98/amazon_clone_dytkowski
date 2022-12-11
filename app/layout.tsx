@@ -6,6 +6,7 @@ import Providers from './providers';
 
 
 import 'react-toastify/dist/ReactToastify.css';
+import Login from '../components/main/Misc/LoginModal';
 
 export default function RootLayout({
     children,
@@ -25,10 +26,11 @@ export default function RootLayout({
                     <Providers>
                         <Header />
                         {children}
-                        
+                     
                     </Providers>
                     <Footer />
                 </div>
+                <div id="loginPortal"></div>
             </body>
         </html>
 
