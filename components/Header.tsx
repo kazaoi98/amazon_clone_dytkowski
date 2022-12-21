@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import CartIndicatorButton from './main/Misc/CartIndicatorButton'
 import SignInButton from './main/Misc/SignInButton'

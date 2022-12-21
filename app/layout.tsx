@@ -3,10 +3,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import './globals.css'
 import Providers from './providers';
-
-
 import 'react-toastify/dist/ReactToastify.css';
-import Login from '../components/main/Misc/LoginModal';
 
 export default function RootLayout({
     children,
@@ -18,6 +15,7 @@ export default function RootLayout({
         <html lang="pl">
             <head>
                 <title>Next.js Amazon clone</title>
+                <script src='https://accounts.google.com/gsi/client' async defer></script>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="Amazon clone made by Łukasz Dytkowski" />
             </head>

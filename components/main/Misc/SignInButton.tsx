@@ -1,23 +1,113 @@
 'use client';
 
 import React, { useState } from 'react'
-import LoginModal from './LoginModal'
+import LoginModal from '../Modals/LoginModal'
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../../redux/hooks';
+import { closeLoginModal, openLoginModal, removeUserCredentials } from '../../../redux/loginSlice';
+import Image from 'next/image'
 
 export default function SignInButton() {
+    const dispatch = useAppDispatch()
 
-    const [Open, setOpen] = useState(true)
+    const { loginModal, loginCredentials } = useSelector((state: any) => state.login);
 
-    return (
-        <>
-        
-            <LoginModal open={Open} />
-            <button onClick={() => setOpen(true)} className='hidden lg:flex  md:ml-[2px] flex-wrap hover:outline hover:outline-[1px] hover:outline-white items-center ml-[2px] pl-[9px] w-[140px] leading-[1] py-[10px]'>
+    const toggleModal = () => {
+        dispatch(openLoginModal())
+    }
+    const isObjEmpty = Object.keys(loginCredentials).length === 0 && loginCredentials.constructor === Object
+
+    function SignIn() {
+        return (
+
+            <button onClick={() => toggleModal()} className='hidden lg:flex  md:ml-[2px] flex-wrap hover:outline hover:outline-[1px] hover:outline-white items-center ml-[2px] pl-[9px] w-[140px] leading-[1] py-[10px]'>
                 <span className='text-white text-[12px] '>Hello, sign in </span>
                 <span className='text-white font-semibold text-[14px] '>Account & Lists</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="pt-1 pl-1 w-4 h-4 text-white">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
             </button>
+
+
+        )
+    }
+
+
+    const signOut = () => {
+        dispatch(removeUserCredentials())
+        dispatch(closeLoginModal())
+    }
+
+    const DropdownMenu = () => {
+
+        return (
+
+            <div id="dropdownAvatar" className="absolute top-[55px] z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 ">
+                <div className="py-3 px-4 text-sm text-gray-900 dark:text-white">
+                    <div>{loginCredentials.given_name + ' ' + loginCredentials.family_name} </div>
+                    <div className="font-medium truncate">{loginCredentials.email}</div>
+                </div>
+                <ul className="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
+                    <li>
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                    </li>
+                </ul>
+                <div className="py-1 ">
+                    <button className='w-full' onClick={() => signOut()}>
+                        <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:rounded-lg dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                    </button>
+                </div>
+            </div>
+
+        )
+    };
+
+    const [dropdown, setDropdown] = useState(false)
+
+    function LoggedIn() {
+
+        return (
+            <>
+
+                <button className='mx-2 rounded-full bg-gray-400' onClick={() => {
+                    setDropdown(!dropdown)
+                }}>
+                    <Image
+                        className='rounded-full'
+                        alt="user_img"
+                        src={loginCredentials.picture}
+                        width={40}
+                        height={40}
+                        priority={false}
+                    />
+                </button>
+                {dropdown && <DropdownMenu />}
+
+            </>
+        )
+    }
+
+    return (
+        <>
+
+
+            {(isObjEmpty) ? (
+                <>
+                    <LoginModal open={loginModal} />
+                    <SignIn />
+
+                </>
+            ) : (
+                <LoggedIn />
+            )
+            }
+
         </>
     )
 }
