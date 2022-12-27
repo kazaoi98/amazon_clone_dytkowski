@@ -20,14 +20,17 @@ export default async function handler(
         return
     }
 
-    const { credentials } = req.body;
+    let { credentials } = req.body;
+    req.body[credentials.id] = req.body['credentials'];
+    delete req.body['credentials'];
     
+
     const newCredentials = {
         ...credentials,
-        created_at: Date.now()
-    }
+        created_at: Date.now(),
+    } 
 
-    await redis.hset('credentials', credentials.id, JSON.stringify(newCredentials));
+    await redis.hset('credentials',  req.body  );
 
     res.status(200).json({ credentials: newCredentials })
 }

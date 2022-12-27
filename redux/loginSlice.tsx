@@ -1,9 +1,8 @@
 'use client';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { EmptyObject } from 'react-hook-form';
 
-type credentials = {
+export type credentials = {
     aud: string
     azp: string
     email: string
@@ -22,11 +21,13 @@ type credentials = {
 
 export interface cartState {
     loginModal: boolean
+    SignUpLoginButtonState: boolean
     loginCredentials: {} 
 }
 
 const initialState = {
     loginModal: false,
+    SignUpLoginButtonState: false,
     loginCredentials: {} as credentials[],
 }
 
@@ -43,6 +44,9 @@ export const loginSlice = createSlice({
         toggleLoginModal(state) {
             state.loginModal = !state.loginModal;
         },
+        toggleSignUpLoginButton(state) {
+            state.SignUpLoginButtonState = !state.SignUpLoginButtonState;
+        },
         setUserCredentials(state, action) {
             state.loginCredentials = action.payload
         },
@@ -53,6 +57,6 @@ export const loginSlice = createSlice({
     }
 })
 
-export const { openLoginModal, closeLoginModal, toggleLoginModal, setUserCredentials, removeUserCredentials } = loginSlice.actions;
+export const { openLoginModal, closeLoginModal, toggleLoginModal, toggleSignUpLoginButton, setUserCredentials, removeUserCredentials } = loginSlice.actions;
 
 export default loginSlice.reducer;

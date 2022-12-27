@@ -19,6 +19,7 @@ export default function ({ product }: ProductTypes) {
     const newPrice = product.price.split(".")
 
     return (
+        
         <div className='h-[25rem] lg:h-[420px] min-w-[370px] lg:min-w-[300px] flex-1 lg:basis-[310px] pl-0 lg:mx-2 mb-4 mt-[12px]' key={product.id}>
             <div className='relative bg-white h-full w-full overflow-hidden pt-[15px] flex pb-[15px] flex-col rounded-none lg:rounded-md [box-shadow:0_0_3px_#ccc] transition-transform ease-in  duration-100 lg:hover:scale-105 mx-auto lg:mx-5'>
                 <div className='text-black font-bold mx-6 mb-4'>
@@ -49,7 +50,7 @@ export default function ({ product }: ProductTypes) {
                         <span className='text-[1.1rem] lg:text-[1rem] relative  top-[-0.3rem] ml-[0.2rem]'>{newPrice[1]}</span>
                     </div>
 
-                    <AddToCartButton product={product} key={product.id} />
+                    <AddToCartButton product={product} key={product.id + '_button'} />
                 
                 </div>
 

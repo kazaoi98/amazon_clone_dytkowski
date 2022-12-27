@@ -20,12 +20,12 @@ const items = [
 
 export default function Segment() {
   return (
-    <div className='flex flex-row flex-wrap overflow-hidden pr-0 lg:pr-10  lg:mt-0'>
+    <div className='flex flex-row flex-wrap overflow-hidden pr-0 lg:pr-10  lg:mt-0' key={'card_container'}>
 
       {items.map((data: any, idx: number) => (
-          <>
-            < Card product={data} />
-          </>
+          
+          < Card product={data} />
+          
       ))}
 
     </div>

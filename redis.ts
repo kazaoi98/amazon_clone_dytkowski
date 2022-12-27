@@ -1,5 +1,10 @@
-import Redis from 'ioredis';
+//import Redis from 'ioredis';
+import { Redis } from '@upstash/redis'
 
-let client = new Redis(process.env.REDIS_URL!);
+const redis = new Redis({
+    url: 'https://eu2-proud-phoenix-30385.upstash.io',
+    token: 'AXaxASQgYTU5MTkyZWQtNWVlNS00NWIwLTk0NjYtZWRiMGI0YmNmY2YyNzc1YTE4NDc0YjhiNDE4NGE2YzVhY2IwYTVmOTJhNjA=',
+    
+  })
 
-export default client;
+export default redis;

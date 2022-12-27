@@ -30,6 +30,7 @@ export default function Header() {
                     src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                     width={97}
                     height={40}
+                    priority
                   />
                 </Link>
               </div>
@@ -77,12 +78,12 @@ export default function Header() {
 
             <div className='flex h-[60px] items-center  '>
 
-              <button className='hidden lg:flex md:ml-[2px] hover:outline hover:outline-[1px] hover:outline-white  items-center ml-[1px] pl-[9px] h-[50px] pt-[10px]'>
+             {/*  <button className='hidden lg:flex md:ml-[2px] hover:outline hover:outline-[1px] hover:outline-white  items-center ml-[1px] pl-[9px] h-[50px] pt-[10px]'>
                 <p className='text-[0.9rem] text-white font-semibold'>EN</p>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="pt-1 pl-1 w-4 h-4 text-white">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
-              </button>
+              </button> */}
 
               <SignInButton />
 

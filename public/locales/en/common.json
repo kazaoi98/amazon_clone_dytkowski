@@ -1,0 +1,29 @@
+{
+    "header": {
+        "deliveryLocation": {
+            "text": "Deliver to",
+            "country": "Poland"
+        },
+        "all": "all",
+        "signInButton": {
+            "first": "Hello, sign in",
+            "second": "Account & Lists"
+        },
+        "cart": "Cart",
+        "centerMenu": {
+            "deals": "Today's Deals",
+            "customerService": "Customer Service",
+            "registry": "Registry",
+            "giftCard": "Gift Cards",
+            "sell": "Sell"
+        },
+        "shopDeals": "Shop great deals now"
+    },
+    "footer": {
+        "backToTop": "Back to top",
+        "language": "English",
+        "currency": "USD - U.S. Dollar",
+        "country": "United States",
+        "Credits": "Amazon clone made by Łukasz Dytkowski"
+    }
+}

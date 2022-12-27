@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
     return (
 
-        <html lang="pl">
+        <html lang="en">
             <head>
                 <title>Next.js Amazon clone</title>
                 <script src='https://accounts.google.com/gsi/client' async defer></script>
