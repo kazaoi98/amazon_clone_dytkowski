@@ -1,13 +1,13 @@
 'use client';
 
-import { spawn } from 'child_process';
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import CartItem from '../../components/main/Card/CartItem'
-import { cartItemsTypes, getTotal } from '../../redux/cartSlice';
+import { getTotal } from '../../redux/cartSlice';
 import { useAppDispatch } from '../../redux/hooks';
 import Image from 'next/image'
 import Link from 'next/link';
+import { RootState } from '../../redux/store';
 
 export type itemProperties = {
   id: number
@@ -47,7 +47,7 @@ const BackButton = () => {
 }
 
 export default function page() {
-  const cart = useSelector((state: any) => state.cart);
+  const cart = useSelector((state: RootState) => state.cart);
 
   const dispatch = useAppDispatch()
 
@@ -69,7 +69,7 @@ export default function page() {
                 <span className='text-right text-[1rem] lg:text-[0.9rem] font-medium text-gray-600'>Price</span>
               </div>
               {cart.cartItems?.map((items: any) => (
-                <CartItem item={items} />
+                <CartItem item={items} key={items.id} />
               ))}
               <div className='flex justify-center lg:justify-end sticky lg:static bottom-0 bg-white w-full '>
                 <div className='flex flex-col items-center float-right mt-2 w-full'>

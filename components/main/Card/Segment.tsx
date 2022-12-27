@@ -1,7 +1,13 @@
 import React from 'react'
 import Card from './Card'
 
-
+type itemType = {
+  id: number,
+  title: string, 
+  img: string, 
+  price: string,
+  rating: number
+}
 
 const items = [
   { id: 1, title: 'Apple iPhone 12 (128 GB) | Super offer', img: 'https://m.media-amazon.com/images/I/71FuI8YvCNL._AC_UY218_.jpg', price: '1499.99', rating: 4.6},
@@ -22,9 +28,9 @@ export default function Segment() {
   return (
     <div className='flex flex-row flex-wrap overflow-hidden pr-0 lg:pr-10  lg:mt-0' key={'card_container'}>
 
-      {items.map((data: any, idx: number) => (
+      {items.map((data: itemType) => (
           
-          < Card product={data} />
+          < Card product={data} key={data.id} />
           
       ))}
 

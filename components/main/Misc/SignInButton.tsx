@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../../redux/hooks';
 import { closeLoginModal, credentials, openLoginModal, removeUserCredentials } from '../../../redux/loginSlice';
 import Image from 'next/image'
+import { RootState } from '../../../redux/store';
 
 export default function SignInButton() {
     const dispatch = useAppDispatch()

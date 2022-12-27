@@ -4,12 +4,13 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '../../../redux/hooks'
 import { toggleSignUpLoginButton } from '../../../redux/loginSlice'
+import { RootState } from '../../../redux/store'
 
 export default function SignUpLoginButton() {
 
     const dispatch = useAppDispatch()
     const [text, setText] = useState('Create new Amazon account')
-    const { SignUpLoginButtonState } = useSelector((state: any) => state.login);
+    const { SignUpLoginButtonState } = useSelector((state: RootState) => state.login);
     
     const handleClick = () => {
         dispatch(toggleSignUpLoginButton())

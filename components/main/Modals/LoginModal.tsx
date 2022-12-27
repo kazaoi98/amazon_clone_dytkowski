@@ -13,6 +13,7 @@ import { Credentials } from '../../../typings';
 import GoogleButton from './GoogleButton';
 import SignUpLoginButton from './SignUpLoginButton';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
 
 type Props = {
     open: boolean;
@@ -68,7 +69,7 @@ export default function LoginModal({ open }: Props) {
                 body: JSON.stringify({ credentials })
             });
 
-            const data = await res.json()
+            const data: unknown = await res.json()
         }
 
         uploadCredentialsToDatabase()
@@ -101,14 +102,14 @@ export default function LoginModal({ open }: Props) {
             });
             
             const credentials = await res.json()
-            const foundData = credentials.retrievedCredentials.find((obj: any) => {return (obj.login === data.login && obj.password === data.password)})
+            const foundData = credentials.retrievedCredentials.find((obj: {login: string, password: string}) => {return (obj.login === data.login && obj.password === data.password)})
             dispatch(setUserCredentials(foundData))
         }
         getCredentials()
         //closeModal()
     }
 
-    const inputNames = [{ name: 'login', title: 'Login or Email' }, { name: 'password', title: 'Password' }, { name: 'confirmPassword', title: 'Re-enter password' }]
+    const inputNames: {name: string, title: string}[] = [{ name: 'login', title: 'Login or Email' }, { name: 'password', title: 'Password' }, { name: 'confirmPassword', title: 'Re-enter password' }]
 
     function Login() {
 
@@ -187,7 +188,7 @@ export default function LoginModal({ open }: Props) {
             </>
         )
     }
-    const { SignUpLoginButtonState } = useSelector((state: any) => state.login);
+    const { SignUpLoginButtonState } = useSelector((state: RootState) => state.login);
     return ReactDOM.createPortal(
         <>
         {open &&

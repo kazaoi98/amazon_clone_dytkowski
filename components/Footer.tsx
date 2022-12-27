@@ -19,6 +19,7 @@ export default function Footer({ }: Props) {
                             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                             width={76}
                             height={30}
+                            priority
                         />
                     </Link>
                 </div>

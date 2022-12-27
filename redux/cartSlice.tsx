@@ -3,12 +3,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { toast } from 'react-toastify';
 
-export interface cartState {
-    cartItems: []
-    cartTotalQuantity: number
-    cartTotalAmount: number
-}
-
 export type cartItemsTypes = {
     id: number
     price: string
@@ -16,6 +10,10 @@ export type cartItemsTypes = {
     title: string
     rating: number
     cartQuantity: number
+}
+
+export type cartType = {
+    cart: cartItemsTypes
 }
 
 const initialState = {

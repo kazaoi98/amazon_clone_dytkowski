@@ -50,7 +50,7 @@ export default function ({ product }: ProductTypes) {
                         <span className='text-[1.1rem] lg:text-[1rem] relative  top-[-0.3rem] ml-[0.2rem]'>{newPrice[1]}</span>
                     </div>
 
-                    <AddToCartButton product={product} key={product.id + '_button'} />
+                    <AddToCartButton product={product} key={product.title} />
                 
                 </div>
 
