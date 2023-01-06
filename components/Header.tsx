@@ -22,12 +22,12 @@ export default function Header() {
                 </svg>
               </div>
 
-              <div className='transition-transform duration-200 ease-in-out hover:scale-100 lg:hover:scale-105 relative flex-shrink-0 md:ml-[11px] h-[50px]'>
+              <div className='transition-transform duration-200 ease-in-out hover:scale-100 lg:hover:scale-105 relative flex-shrink-0 md:ml-[11px] h-[50px] bg-[#ffff]  rounded-lg my-1 mr-1'>
                 <Link href='/'>
                   <Image
                     className='h-[35px] lg:h-[40px] mt-3 lg:mt-2 m-[1px] w-full lg:pt-[1px] pr-[8px] pb-0 pl-[6px] '
                     alt="logo"
-                    src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png"
                     width={97}
                     height={40}
                     priority
@@ -97,7 +97,7 @@ export default function Header() {
           <div className='flex-1 bg-[#131921] pb-2'>
             <div className='flex lg:hidden flex-row mx-2'>
               <div className='flex  flex-1'>
-                <input aria-label='search input' placeholder='Search Amazon' type={'text'} autoComplete={'off'} className='h-[40px] rounded-l-lg lg:rounded-l-none outline-none flex flex-grow indent-[8px] leading-[15px] text-black pt-[7px] pr-[10px] pb-[10px] pl-0' ></input>
+                <input aria-label='search input' placeholder='Search Amazon' type={'text'} autoComplete={'off'} className='h-[40px] rounded-l-lg rounded-r-none lg:rounded-l-none outline-none flex flex-grow indent-[8px] leading-[15px] text-black pt-[7px] pr-[10px] pb-[10px] pl-0' ></input>
               </div>
 
               <div className='flex bg-[#febd69] justify-center items-center w-[45px] hover:bg-[#f3a847] rounded-r-[0.3rem] mr-0 lg:mr-2'>

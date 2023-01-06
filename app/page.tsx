@@ -12,7 +12,7 @@ export default function page() {
 
     <div className='max-w-[94rem] mx-auto'>
       <>
-        <Carousel />
+        {/* <Carousel /> */}
         <div className='flex justify-center'>
           <Segment />
         </div>

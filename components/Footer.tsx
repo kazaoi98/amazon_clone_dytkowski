@@ -16,7 +16,7 @@ export default function Footer({ }: Props) {
                         <Image
                             className='h-[30px] w-auto mt-2 m-[1px] pt-[1px] pr-[8px] pb-0 pl-[6px] '
                             alt="logo"
-                            src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png"
                             width={76}
                             height={30}
                             priority

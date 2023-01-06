@@ -1,7 +1,6 @@
 'use client';
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { toast } from 'react-toastify';
 
 export type cartItemsTypes = {
     id: number
@@ -22,19 +21,6 @@ const initialState = {
     cartTotalAmount: 0 as number,
 }
 
-const alertProduct = () => {
-    toast.success('Product has been added to cart', {
-        position: "bottom-left",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
-};
-
 
 export const cartSlice = createSlice({
     name: 'cart',
@@ -47,7 +33,7 @@ export const cartSlice = createSlice({
             } else {
                 const tempProduct = { ...action.payload, cartQuantity: 1 };
                 state.cartItems.push(tempProduct);
-                alertProduct()
+                
             }
             
         },

@@ -24,6 +24,11 @@ module.exports = {
         protocol: 'https',
         hostname: 't3.ftcdn.net',
         pathname: '/jpg/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+        pathname: '/wikipedia/**'
       }
     ],
   },

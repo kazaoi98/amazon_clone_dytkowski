@@ -39,6 +39,7 @@ export default function SliderComponent() {
                             src={'https://m.media-amazon.com/images/I/71dbxIcDioL._SX3000_.jpg'}
                             width={1500}
                             height={600}
+                            priority={true}
                         />
                     </SwiperSlide>
                     <SwiperSlide>
@@ -48,6 +49,7 @@ export default function SliderComponent() {
                             src={'https://m.media-amazon.com/images/I/71tIrZqybrL._SX3000_.jpg'}
                             width={1500}
                             height={600}
+                            priority={true}
                         />
                     </SwiperSlide>
                 </Swiper>
