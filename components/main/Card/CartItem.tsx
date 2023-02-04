@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import QuantitySelector from '../Misc/QuantitySelector'
@@ -23,7 +23,7 @@ export default function CartItem({ item }: itemProps) {
                 <div className='flex-shrink-0'>
                     <Link href='/Cart'>
                         <Image
-                            className='mt-2 m-[1px] pt-[1px] pb-0 pl-[6px] h-[100px] w-[100px] lg:h-[180px] lg:w-[180px]'
+                            className='mt-2 m-[1px] pt-[1px] pb-0 pl-[6px] h-[100px] w-[100px] lg:h-[180px] lg:w-[180px] aspect-square'
                             alt="logo"
                             src={item.img}
                             width={180}

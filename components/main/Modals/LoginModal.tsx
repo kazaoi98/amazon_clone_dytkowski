@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom';
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAppDispatch } from '../../../redux/hooks';
@@ -100,16 +100,16 @@ export default function LoginModal({ open }: Props) {
                     'Content-Type': 'application/json',
                 },
             });
-            
+
             const credentials = await res.json()
-            const foundData = credentials.retrievedCredentials.find((obj: {login: string, password: string}) => {return (obj.login === data.login && obj.password === data.password)})
+            const foundData = credentials.retrievedCredentials.find((obj: { login: string, password: string }) => { return (obj.login === data.login && obj.password === data.password) })
             dispatch(setUserCredentials(foundData))
         }
         getCredentials()
         //closeModal()
     }
 
-    const inputNames: {name: string, title: string}[] = [{ name: 'login', title: 'Login or Email' }, { name: 'password', title: 'Password' }, { name: 'confirmPassword', title: 'Re-enter password' }]
+    const inputNames: { name: string, title: string }[] = [{ name: 'login', title: 'Login or Email' }, { name: 'password', title: 'Password' }, { name: 'confirmPassword', title: 'Re-enter password' }]
 
     function Login() {
 
@@ -189,49 +189,53 @@ export default function LoginModal({ open }: Props) {
         )
     }
     const { SignUpLoginButtonState } = useSelector((state: RootState) => state.login);
+
+    
+
     return ReactDOM.createPortal(
-        <>
-        {open &&
-            <div className=' justify-center items-start flex bg-[rgba(0,0,0,.85)] w-full h-full top-0 bottom-0 left-0 right-0 fixed '>
+        
+            <>
+                {open &&
+                    <div className=' justify-center items-start flex bg-[rgba(0,0,0,.85)] w-full h-full top-0 bottom-0 left-0 right-0 fixed '>
+                        <div className='flex flex-col mb-auto mt-auto relative justify-center'>
+                            <div className='flex relative flex-grow-0 w-full justify-center items-center bg-gray-100 max-w-[400px] h-full py-10 rounded-lg z-20'>
+                                <div className='flex flex-col justify-center w-[60%] '>
 
-                <div className='flex flex-col mb-auto mt-auto relative justify-center'>
-                    <div className='flex relative flex-grow-0 w-full justify-center items-center bg-gray-100 max-w-lg h-full py-10 rounded-lg z-20'>
-                        <div className='flex flex-col justify-center w-[60%] '>
+                                    {!SignUpLoginButtonState && <Login />}
+                                    {SignUpLoginButtonState && <SignUp />}
+                                    <ConditionsText />
 
-                            {!SignUpLoginButtonState && <Login />}
-                            {SignUpLoginButtonState && <SignUp />}
-                            <ConditionsText />
+                                </div>
 
+                            </div>
+                            <div className='flex text-center mt-4'>
+                                <div className='flex-grow relative '>
+                                    <div className='top-1/2 border-t border-solid border-gray-300 w-full absolute'></div>
+                                </div>
+                                <span className='flex-grow-0 pl-4 pr-4 text-gray-100 text-[0.8rem]'>New to Amazon?</span>
+                                <div className='flex-grow relative'>
+                                    <div className='top-1/2 border-t border-solid border-gray-300 w-full absolute'></div>
+                                </div>
+                            </div>
+
+                            <GoogleButton />
+
+                            <SignUpLoginButton />
+
+                            <button onClick={() => closeModal()} className='hover:bg-gray-300 hidden lg:flex ml-2 p-1  left-full top-0 absolute bg-gray-100 mb-auto rounded-lg'>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className=" w-6 h-6 ">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+
+                            </button>
                         </div>
 
                     </div>
-                    <div className='flex text-center mt-4'>
-                        <div className='flex-grow relative '>
-                            <div className='top-1/2 border-t border-solid border-gray-300 w-full absolute'></div>
-                        </div>
-                        <span className='flex-grow-0 pl-4 pr-4 text-gray-100 text-[0.8rem]'>New to Amazon?</span>
-                        <div className='flex-grow relative'>
-                            <div className='top-1/2 border-t border-solid border-gray-300 w-full absolute'></div>
-                        </div>
-                    </div>
 
-                    <GoogleButton />
-
-                    <SignUpLoginButton />
-
-                    <button onClick={() => closeModal()} className='hover:bg-gray-300  hidden lg:flex ml-2 p-1  left-full top-0 absolute bg-gray-100 mb-auto rounded-lg'>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className=" w-6 h-6 ">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-
-                    </button>
-                </div>
-
-            </div>
-
-        }
-        </>
+                }
+            </>
+        
         ,
         document.getElementById('loginPortal')!
     )

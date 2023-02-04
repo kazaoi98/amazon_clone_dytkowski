@@ -7,7 +7,6 @@ export default function GoogleButton() {
 
     const dispatch = useAppDispatch()
     const handleCallback = (response: any) => {
-        console.log(response, typeof response)
         var obj = jwtDecode(response.credential)
         dispatch(setUserCredentials(obj))
     }
@@ -34,7 +33,7 @@ export default function GoogleButton() {
 
     return (
         <div className=' mt-2  flex justify-center bg-[#1a73e8] rounded-lg'>
-            <div id="google_button"></div>
+                <div id="google_button" className='w-full'></div>
         </div>
 
     )
